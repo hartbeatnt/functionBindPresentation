@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import currentSlide from './currentSlide.reducer'
+import slide from './slide.reducer'
 
 const rootReducer = combineReducers({
-  currentSlide
+  slide
 });
 
 export default rootReducer;
