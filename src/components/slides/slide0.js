@@ -7,7 +7,16 @@ class Slide0 extends Component {
   render(){
     return (
       <div className='title slide slide0'>
-        <h1>Function Bind</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      
+        <h1>Function<br />Bind</h1>
       </div>
     )
   }

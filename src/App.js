@@ -27,8 +27,11 @@ class App extends Component {
   }
 
   keyDownHandler(e) {
-    if (e.keyCode == 37) store.dispatch({type: actions.PREV_SLIDE});
-    if (e.keyCode == 39) store.dispatch({type: actions.NEXT_SLIDE});
+    let currentSlide = store.getState().slide.number;
+    if (e.keyCode == 37 && currentSlide > 0) 
+      store.dispatch({type: actions.PREV_SLIDE});
+    if (e.keyCode == 39 && currentSlide < Object.keys(slides).length-2) 
+      store.dispatch({type: actions.NEXT_SLIDE});
   }
 
   updateDimensions(){
@@ -37,7 +40,9 @@ class App extends Component {
   }
 
   render() {
-    let CurrentSlide = slides[`Slide${this.props.slide.number}`]
+    let CurrentSlide = slides[`Slide${this.props.slide.number}`] ?
+      slides[`Slide${this.props.slide.number}`] :
+      slides.finalSlide
     return (
       <div className="App">
         <div className="App-header">
